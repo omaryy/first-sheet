@@ -1,0 +1,112 @@
+
+public class MySpecialArrayUtils {
+	public static void reverse (int arr[])
+	{
+		int n,i,j;
+		int temp;
+		n=arr.length;
+		for ( i=0, j=(n-1);i<(arr.length/2);i++,j--)
+		{
+			temp=arr[i];
+			arr[i]=arr[j];
+			arr[j]=temp;
+		}
+	}
+	public static int[] sumEvenOdd (int arr[])
+	{
+		int sumeven=0;
+		int sumodd=0;
+
+		
+		int sum []=new int [2];
+		
+		
+		
+		for (int i=0;i<arr.length;i++)
+		{
+			if (arr[i]%2==0)
+			{
+				sumeven=sumeven+arr[i];
+				
+			}
+			else 
+			{
+				sumodd=sumodd+arr[i];
+			}
+		}
+		
+		
+		if (sumeven==0 && sumodd==0)
+		{
+			sum[0]= 0;
+			sum[1]=0;
+			
+			return sum;
+		}
+	
+			sum[0]=sumeven;
+			sum[1]=sumodd;
+		
+		return sum;
+	}
+	public static double average (int  arr[])
+	{
+		long sum=0;
+		for (int i=0;i<arr.length;i++)
+		{
+			sum=sum+arr[i];
+		}
+	double average=sum/arr.length;
+	return average;
+		
+	}
+	public static void movevalue (int arr[],int val)
+	{
+		int b[]=new int [100];
+		int k=0;
+	for (int i=0;i<arr.length;i++)
+	{
+		if (arr[i]!=val)
+		{
+			b[k]=arr[i];
+			k++;	
+		}
+		
+	}
+	while (k<arr.length)
+	{
+		b[k]=val;
+		k++;
+	}
+	for (int i=0;i<b.length;i++)
+	{
+		System.out.println(b[i]);
+	}
+	
+		
+		
+	}
+	public static void transpose (int [][]arr)
+	{
+		int temp[][]=new int [50][50];
+	int n=arr.length;
+	int m =arr[0].length;
+		
+	if (n==m) {
+		
+		for (int i=0;i<arr.length;i++)
+		{
+			for (int j=0;j<arr[0].length;j++)
+			{
+				temp[j][i]=arr[i][j];
+			}
+		}
+	arr=temp;
+	}
+	
+	else
+	{
+		System.out.println("error");
+	}
+	}
+}
